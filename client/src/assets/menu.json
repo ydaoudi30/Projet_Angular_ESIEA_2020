@@ -1,0 +1,45 @@
+[ 
+  {
+    "id": 1,
+    "title": "Privacy",
+    "routeType": null,
+    "href":  null,
+    "icon": "./assets/png/man-user.png",
+    "target": "",
+    "hasSubMenu": true,
+    "disabled":false,
+    "parentId": 0
+  },
+  {
+    "id": 2,
+    "title": "Change Password",
+    "routeType": 3,
+    "href":  null,
+    "icon": "./assets/png/man-user.png",
+    "target": "",
+    "hasSubMenu": false,
+    "disabled":false,
+    "parentId": 1 
+  }, 
+  { 
+    "id": 3,
+    "title": "Setup",
+    "routeType": null,
+    "href":  null,
+    "icon": "./assets/png/man-user.png",
+    "target": "",
+    "hasSubMenu": true,
+    "disabled":false,
+    "parentId": 0 
+  },
+  {
+    "id": 4,
+    "title": "Users",
+    "routeType": 1,
+    "href":  null,
+    "icon": "./assets/png/man-user.png",
+    "target": "",
+    "hasSubMenu": false,
+    "disabled":false,
+    "parentId": 3 
+    }]

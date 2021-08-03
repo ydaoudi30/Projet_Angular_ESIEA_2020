@@ -1,0 +1,96 @@
+.green-dark .contentArea{
+    background: #262626 !important;
+    color: white !important;
+}
+.green-dark .contentArea mat-card{ 
+    background: #424242 !important;
+    color: white !important;
+} 
+.green-dark .sideNav-theme{
+    background: #424242 !important;
+    color: white !important;
+} 
+.green-dark .header{
+    background:#388e3c !important;
+    color: white !important;
+} 
+.green-dark .active-link {
+    border-radius: 0;
+    background:#388e3c !important;
+    color: #fff;
+}
+
+
+.indigo-light .contentArea{
+    background-color: #fafafa;
+    color: rgba(0, 0, 0, 0.87);
+}
+.indigo-light .contentArea mat-card{ 
+    background-color: white;
+    color: rgba(0, 0, 0, 0.87);
+} 
+.indigo-light .sideNav-theme{
+    background-color: white;
+    color: rgba(0, 0, 0, 0.87);
+} 
+.indigo-light .header{
+    background:#283593 !important;
+    color: white !important;
+}
+
+.indigo-light .active-link {
+    border-radius: 0;
+    background-color: #283593;
+    color: #fff;
+}
+
+.active-link {
+    border-radius: 0;
+    background-color: #283593;
+    color: #fff;
+}
+
+/* 
+// ::ng-deep .red-light{
+//     background: red;
+//     color: white;
+// }
+
+
+
+// @import '~@angular/material/theming';
+// @include mat-core();
+
+// @import 'theme-reset';
+// .app{
+//     &.indigo-light{
+//         @import "skins/indigo-light";
+//         @include angular-material-theme($indigo-light-theme);
+//         @include theme-reset($indigo-light-theme);
+//     }
+//     &.teal-light{
+//         @import "skins/teal-light";
+//         @include angular-material-theme($teal-light-theme);
+//         @include theme-reset($teal-light-theme);
+//     }
+//      &.red-light{
+//         @import "skins/red-light";
+//         @include angular-material-theme($red-light-theme);
+//         @include theme-reset($red-light-theme);
+//     }
+//     &.blue-dark{
+//         @import "skins/blue-dark";
+//         @include angular-material-theme($blue-dark-theme);
+//         @include theme-reset($blue-dark-theme);
+//     }
+//     &.green-dark{
+//         @import "skins/green-dark";
+//         @include angular-material-theme($green-dark-theme);
+//         @include theme-reset($green-dark-theme);
+//     }
+//     &.pink-dark{
+//         @import "skins/pink-dark";
+//         @include angular-material-theme($pink-dark-theme);
+//         @include theme-reset($pink-dark-theme);
+//     }
+// } */

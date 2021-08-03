@@ -1,0 +1,50 @@
+<mat-toolbar fxLayout="row" class="header">
+  <!--  -->
+  <span fxFlex>
+      <div fxShow="true">
+          <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+       </div>
+  </span>
+  <app-notifications></app-notifications>
+  <app-user-menu></app-user-menu> 
+</mat-toolbar>
+
+<mat-sidenav-container fxFlexFill style="height: calc(90vh) !important">
+    <mat-sidenav [opened]="settings.sidenavIsOpened" [mode]="(settings.sidenavIsPinned) ? 'side' : 'over'" 
+                 #sidenav class="sidenav mat-elevation-z6 sideNav-theme">
+        <app-sidenav ></app-sidenav>
+    </mat-sidenav> 
+  <mat-sidenav-content> 
+  <app-breadcrumb></app-breadcrumb>
+  <perfect-scrollbar class="scroll-container">
+    <div class="scrollable-content"> 
+        <router-outlet></router-outlet>    
+    </div> 
+  </perfect-scrollbar>
+  <div fxLayout="row" fxLayoutAlign="center center" class="options-icon" (click)="options.toggle()">
+        <mat-icon>settings</mat-icon>
+  </div> 
+  </mat-sidenav-content>
+
+  <mat-sidenav #options position="end" class="options">        
+       
+      <div fxLayout="row" fxLayoutAlign="center center" class="control mat-elevation-z1">
+          <h2>Settings</h2>
+      </div>  
+
+      <div perfectScrollbar> 
+            <div fxLayout="column" class="control">
+                <h4>Choose Theme</h4>        
+                <div fxLayout="row" fxLayoutAlign="space-around center"> 
+                    <div class="skin-primary indigo-light" (click)="changeTheme('indigo-light')"><div class="skin-secondary"></div></div>  
+                    <div class="skin-primary teal-light" (click)="changeTheme('teal-light')"><div class="skin-secondary"></div></div> 
+                    <div class="skin-primary green-dark" (click)="changeTheme('green-dark')"><div class="skin-secondary"></div></div>  
+                </div>
+            </div> 
+      </div>
+
+  </mat-sidenav>
+
+</mat-sidenav-container>  

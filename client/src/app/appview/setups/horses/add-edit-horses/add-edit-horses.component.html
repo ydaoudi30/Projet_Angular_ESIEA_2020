@@ -1,0 +1,19 @@
+<h2 mat-dialog-title style="text-align: center;" class="appFont">Add Horse</h2>
+<form class="form"  name="form"  (ngSubmit)="f.form.valid && saveClick()" #f="ngForm" novalidate>
+<div>  
+  <div id="form">
+      <fieldset style="margin-bottom: 10px;"> 
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput  name="name" id="name" [(ngModel)]="currentHorse.name" #name="ngModel" required
+                    placeholder="Name">  
+            </mat-form-field> 
+            <img width="100" height="100" [src]="selectedfileName" (click)="fileInput.click()">  
+            <input style="display: none; "  type="file" accept="image/*" (change)="browseFile($event)" #fileInput> 
+      </fieldset>
+  </div>    
+  <button type="button" class="continue-button appFont"  type="submit"> 
+    <p style="margin-left: 40px;">Continue</p>
+  </button>  
+</div>
+</form> 

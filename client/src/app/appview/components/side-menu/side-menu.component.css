@@ -1,0 +1,30 @@
+.mat-sidenav { 
+  width: 200px;
+}
+.btn-link{
+  font-size: 12px; 
+  margin-left: 6px;
+}  
+.highlight{ 
+  color: white;
+  background-color: #2A383F; 
+} 
+.highlight:hover{ 
+  color: white; 
+} 
+.outer-link{
+ border-color: black;  
+} 
+/* ---------------------------------------------------------------------------- */
+.ml-0{
+  background-color:#36474F;  
+  border-radius: 10px;
+}  
+.subMenu{
+/* margin-left: 2%;  */
+border-radius: 10px;
+margin-top: -10px;
+}  
+.text-light{
+  color: lightgray;
+}

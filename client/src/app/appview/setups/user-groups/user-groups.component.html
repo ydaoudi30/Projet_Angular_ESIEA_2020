@@ -1,0 +1,15 @@
+<mat-toolbar>
+    <button mat-icon-button (click)="addClick()">
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-toolbar> 
+<div style="float: left;display: block;width: 280px;margin-top: 10px;margin-right: 10px;"  *ngFor="let user of users"> 
+    <mat-card fxLayout="row" fxFlex="280px" fxLayoutGap="10px" style="height: 90px;">
+      <button  mat-mini-fab width="50" style="margin-right: 10px">{{user.userName.substring(0,2).toUpperCase()}}</button> 
+      <div FxFlex fxLayout="column" fxLayoutAlign="space-evenly start">  
+              <span class="fx-userName"  style="font-weight: bold">{{user.userName}}</span>  
+              <span class="fx-notifitext">{{user.email}}</span> 
+              <span class="fx-notifitext">( {{user.role}} )</span>
+      </div>
+    </mat-card>  
+</div> 

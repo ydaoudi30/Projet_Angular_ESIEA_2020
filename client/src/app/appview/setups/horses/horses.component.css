@@ -1,0 +1,26 @@
+.main-container{
+    display: inline-flex;
+    width: 100%;
+}
+.leftBox{
+    width: 320px;
+}
+.RightBox{
+    width: 100%;
+}
+
+.user-menu .mat-toolbar, .mat-toolbar-row{
+    height: 100px !important;
+}
+.user-menu .user-info{
+    width: 280px;
+}  
+.user-menu  p{
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center; 
+}
+.user-menu .mat-menu-item{
+    height: 36px;
+    line-height: 36px;
+}

@@ -1,0 +1,111 @@
+<div [ngStyle]="{'height':tableProperties.height,'width':tableProperties.width,'position': tableProperties.position}" 
+     style="bottom: 0;padding: 14px;background-color: white;"> 
+  <mat-card class="tbl" style="height: 98%;padding: 0px"> 
+   <table width="100%">
+     <tr width="100%">
+       <td width="100%">
+         <mat-icon *ngIf="tableProperties.showDelete" class="pointer" style="margin-right: 10px" (click)="btnClickHandler('delete',null)">delete</mat-icon>
+         <mat-icon *ngIf="tableProperties.showAdd" class="pointer"  style="margin-right: 10px" (click)="btnClickHandler('add',null)">add</mat-icon> 
+         <mat-icon *ngIf="tableProperties.showSave" class="pointer"  style="margin-right: 10px" (click)="btnClickHandler('save',null)">save</mat-icon>  
+         <!-- <mat-icon *ngIf="tableProperties.showPrint" class="pointer"  style="margin-right: 10px" (click)="btnClickHandler('print',null)">print</mat-icon>   -->
+         <span *ngIf="tableProperties.grnList" style="vertical-align: top">  
+          <input class="radioPeriod" type="radio" name="period" value="1" (input)="tabChangeHandler($event.target.value , false)"
+                 #selectedPeriodControl="ngModel"  style="vertical-align: middle;margin-right: 10px" [(ngModel)]="selectedPeriod" >
+          <span  class="imgType" style="margin-right: 10px">All Orders</span>
+          <input class="radioPeriod" type="radio" name="period" value="2" (input)="tabChangeHandler($event.target.value , false)"
+                 #selectedPeriodControl="ngModel"  style="vertical-align: middle;margin-right: 10px" [(ngModel)]="selectedPeriod" >
+          <span  class="imgType" style="margin-right: 10px">From Grn</span>
+         </span>
+          
+        </td> 
+        <td width="100%">
+          &nbsp;
+        </td>
+        <td>
+        <input class="searchInput" placeholder="search" [(ngModel)]="filterStr" id="filterStr" name="filterStr">
+       </td>
+     </tr>
+   </table>
+    <div class="gene-card-content">
+      <div class="table-responsive">
+        <table class="table-hover table-middle th-fw-light mb-0"  style="font-size: 12px;"
+           *ngIf="tableData.tbody && tableData.tbody.length && tableData.tbody.length > 0">
+            <thead> 
+                <th id="checkBox" *ngIf="tableProperties.sellectAll">
+                    <div class="center" style="margin: 0 auto;">
+                      <label class="contain">
+                        <input type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll();" name="selectAll">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </th>
+                <th *ngFor="let th of tableData.thead" id="{{th.key}}" [style.width]="th.width">
+                    <span class="sorting">{{th.name}}</span><img class="headerImage img{{th.key}}"></th>
+                <th class="center actions" *ngIf="tableProperties.action">Actions</th> 
+            </thead>
+            <tbody>
+            <tr class="pointer" *ngFor="let td of tableData.tbody"  id="list_{{td.id}}" 
+                 (click)="onSingleClick('list_'+td.id,td)" (dblclick)="onDoubleClick(td)">
+                <td *ngIf="tableProperties.sellectAll" class="center">
+                    <div class="center">
+                        <label class="contain">
+                            <input type="checkbox" [(ngModel)]="td.selected" (change)="checkIfAllSelected();"  name="select">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </td> 
+                <td *ngFor="let th of tableData.thead">
+                    <span *ngIf="th.fieldType=='string'">
+                            {{td[th.key]}} 
+                          </span> 
+                          <span *ngIf="th.fieldType=='input'" style="width: 100%">
+                            <input *ngIf="th.draggable != true" [disabled]="th.disabled" style="width: 95%" type="input"
+                                   [(ngModel)]="td[th.key]"  
+                                   name="th.key"> 
+                            <input *ngIf="th.draggable == true"  [disabled]="th.disabled" style="width:85%;" type="input" 
+                                   [(ngModel)]="td[th.key]"  name="th.key"> 
+                            <img   *ngIf="th.required == true" class='required' src='assets/images/icons/redLine.PNG'>
+                            <img   *ngIf="th.draggable == true" class='draggabled' src='assets/images/dd_red.png'>
+                          </span> 
+                          <span *ngIf="th.fieldType=='date'" style="width: 100%">
+                            <input  style="width: 100%"  [disabled]="th.disabled" type="date" 
+                                    [ngModel] ="td[th.key] | date:'yyyy-MM-dd'" (ngModelChange)="td[th.key] = $event">  
+                          </span> 
+                           <span *ngIf="th.fieldType=='checkbox'" style="width: 100% ;text-align: left">
+                            <input   [disabled]="th.disabled" type="checkbox" 
+                                    [(ngModel)]="td[th.key]"  
+                                    name="th.key"> 
+                          </span>
+                          <span *ngIf="th.fieldType=='dropdown'" style="width: 100%">
+                            <select  style="width: 100%" name="select" id="select" 
+                                     [(ngModel)]="td[th.key]">
+                            <option *ngFor="let data of th.list"  [ngValue]="data.id"> {{data.name}} </option>
+                            </select>
+                          </span>
+                          <span *ngIf="th.fieldType=='icon'" style="width: 20px;height: 20px;;text-align: center">
+                            <img  src="{{td[th.key]}}" style="width: 20px;height: 20px;;text-align: center"> 
+                          </span>
+                          <span *ngIf="th.fieldType=='button'" style="width: 100%;text-align: center">
+                              <button class="tblBtn" [hidden]="td[th.key2]" (click)="btnClickHandler('adToNetwotk',td)">{{td[th.key]}}</button> 
+                          </span>
+                   </td> 
+                   <td *ngIf="tableProperties.action">
+                     <span> 
+                        <img class="btnicon" [matMenuTriggerFor]="menu" matTooltip="Actions"  [src]="'./assets/icons/chevron.png'"> 
+                         <mat-menu #menu="matMenu" overlapTrigger="false" > 
+                            <span *ngFor="let btn of actionButtons"> 
+                              <button mat-menu-item style="height: 35px" (click)="btnClickHandler(btn.type,td)"> 
+                                <span><img style="width: 14px;width: 14px;margin-right: 7px" src="{{btn.icon}}" > </span>
+                                <span >{{btn.name}}</span>
+                              </button>
+                            </span> 
+                        </mat-menu> 
+                    </span>  
+                   </td>
+            </tr>
+            </tbody>
+          </table> 
+      </div>
+    </div>
+  </mat-card>
+</div>  

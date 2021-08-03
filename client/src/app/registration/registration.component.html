@@ -1,0 +1,32 @@
+<h2 mat-dialog-title style="text-align: center;margin-bottom: 50px;" class="appFont">Join Demosite</h2>
+<form class="form"  name="form"  (ngSubmit)="f.form.valid && regContinue()" #f="ngForm" novalidate>
+<div style="padding-left: 15px;"> 
+  <button type="button" class="facebook-signing-button appFont" (click)="registrationWithFb()"> 
+     <img style="height:20px;width:20px" src="../../assets/socialmedia/facebook.png">
+    <p style="margin-left: 40px;">Continue with Facebook</p>
+  </button> 
+  <button type="button" class="google-signing-button appFont" (click)="registrationWithGoogle()"> 
+     <img style="height:20px;width:20px" src="../../assets/socialmedia/google-plus.png">
+    <p style="margin-left: 40px;">Continue with Google</p>
+  </button> 
+  <div id="form" style="width: 320px;">
+      <fieldset style="border-bottom: none;border-left: none;border-right: none;margin-top: 25px;padding: 0px">
+        <legend style="margin-left: 43%;">OR</legend>
+            <div class="alert" role="alert" *ngIf="errorMessage">{{errorMessage}}</div> 
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput  name="email" id="email" [(ngModel)]="user.email" #email="ngModel" required
+                       placeholder="Email">  
+              </mat-form-field> 
+            <div *ngIf="f.submitted && !email.valid" class="help-block">The User Name is required</div> 
+      </fieldset>
+  </div>    
+  <button type="button" class="continue-button appFont"  type="submit"> 
+    <p style="margin-left: 40px;">Continue</p>
+  </button>  
+</div>
+</form>
+<div style="margin-top: 10px;text-align: right;margin-right: 15px;"> 
+  <span fxFlex></span> 
+  Already a member? <a  (click)="login()" [routerLink]="['/session/forgot-password']">Sign In</a>
+</div>  

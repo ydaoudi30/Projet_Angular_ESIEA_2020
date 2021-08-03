@@ -1,0 +1,13 @@
+<mat-toolbar>
+        <button mat-icon-button (click)="addClick()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </mat-toolbar> 
+    <div style="float: left;display: block;width: 280px;margin-top: 10px;margin-right: 10px;"  *ngFor="let horse of horses"> 
+        <mat-card fxLayout="row" fxFlex="280px" fxLayoutGap="10px" style="height: 90px;">
+          <img style="cursor: pointer" width="50" height="50" [src]="getImage(horse.image)"> 
+          <div FxFlex fxLayout="column" fxLayoutAlign="space-evenly start">  
+                  <span class="fx-userName"  style="font-weight: bold">{{horse.name}}</span>  
+          </div>
+        </mat-card>  
+    </div> 

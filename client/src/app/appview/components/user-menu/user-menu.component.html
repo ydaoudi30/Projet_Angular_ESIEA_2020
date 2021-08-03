@@ -1,0 +1,18 @@
+<button mat-icon-button [matMenuTriggerFor]="userMenu" #userMenuTrigger="matMenuTrigger" >
+        <mat-icon>more_vert</mat-icon>
+</button>
+    
+<mat-menu #userMenu="matMenu" [overlapTrigger]="false" class="toolbar-dropdown-menu user-menu">
+    <mat-card fxLayout="row" fxFlex="280px" fxLayoutAlign="space-evenly start">
+        <button  mat-mini-fab width="50">MD</button> 
+        <div FxFlex fxLayout="column" fxLayoutAlign="space-evenly start">  
+                <span class="fx-userName">Daoudi Yassine</span>  
+                <span class="fx-notifitext">poire40@gmail.com</span>
+        </div>
+    </mat-card>  
+    <div class="divider"></div> 
+    <a mat-menu-item (click)="logOut()"> 
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Sign out</span> 
+    </a> 
+</mat-menu>

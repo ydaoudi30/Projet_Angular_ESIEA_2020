@@ -1,0 +1,24 @@
+<h2 mat-dialog-title style="text-align: center;" class="appFont">Add Schedule</h2>
+<form class="form"  name="form"  (ngSubmit)="f.form.valid && saveClick()" #f="ngForm" novalidate>
+<div>  
+  <div id="form">
+      <fieldset style="margin-bottom: 10px;"> 
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput  name="name" id="name" [(ngModel)]="currentSchedule.name" #name="ngModel" required
+                placeholder="Name">  
+        </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>date</mat-label>
+            <input matInput [matDatepicker]="picker"
+                   (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+      </fieldset>
+  </div>    
+  <button type="button" class="continue-button appFont"  type="submit"> 
+    <p style="margin-left: 40px;">Continue</p>
+  </button>  
+</div>
+</form> 

@@ -1,0 +1,154 @@
+.signInBtn{
+  height: 30px;
+  border: 2px solid #1dbf73;
+  cursor: pointer;
+  width: 70px;
+  font-weight: bold;
+  background: white;
+  color: #1dbf73;
+}
+.signInBtn:hover{
+  color: white;
+  background: #1dbf73;
+  font-weight: bold;
+}
+.signUpBtn{ 
+  margin-right: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  color: black;
+}
+.signUpBtn:hover{
+  color: #1dbf73;
+  font-weight: bold;
+}
+.spacer {
+    flex: 1 1 auto;
+  } 
+  .authcontainer {  
+    position: fixed; 
+    height: 100%;
+    width: 100%;
+  }  
+  .mat-sidenav { 
+    width: 250px;
+  }
+  .headerIcon{
+    cursor: pointer; 
+  }
+  .highlight{ 
+    color: white; 
+  }
+  .rightContainer{ 
+    height: 100%;
+  }
+  .circle {
+    border-radius: 50%;
+  }
+  .accounticon{
+    border-radius:50%;
+  }
+  .with-bg { 
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    max-height: 130px;  
+  } 
+  .outer-link{
+    background-color:#36474F;  
+  }
+  /* -------------------------Side Navigation Baar------------------------------- */
+  .no-shadow {
+    box-shadow: none !important;
+    background-color:#36474F;  
+    color: white;
+  }  
+  .bottom-to-top {
+    border: 0px; 
+    background-color:#36474F; 
+    border-right: 1px;
+    border-style: solid;
+    color: white;
+    border-image:  linear-gradient(to top, #c1c1c1, rgba(0, 0, 0, 0)) 1 100%
+  } 
+  ::ng-deep .mat-expansion-panel-body {
+    padding: 0px !important; 
+    padding-left: 10px !important;
+  }  
+.subMenu{
+  margin-left: 10%; 
+  border-radius: 10px;
+}
+  /* .header-box-shadow {
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    background-color: #F1F2F7; 
+  } */
+  .copywrite{
+    font-size: 12px;
+    font-weight: bold;
+    color:#448aff; 
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  } 
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+  }
+  .profileBar{
+    padding-top: 10px;
+    text-align: center;
+    height:220px;
+    display:block;
+    color: white;
+    background-color:#36474F;  
+  } 
+  .userInfo{
+    font-size: 14px;
+    line-height: normal;
+  }
+  .example-fill-remaining-space { 
+    flex: 1 1 auto;
+  }
+  .profile-img-card { 
+    height: 100px; 
+    display: block; 
+    -moz-border-radius: 40%; 
+    -webkit-border-radius: 40%; 
+    border-radius: 40%;     
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 10px;
+  } 
+  .changeImg{
+   margin-top: -80px;
+   margin-left: 40px;
+   position: absolute;
+   cursor: pointer; 
+ }
+ .companylogo{
+   height: 50px;
+   width: 180px;
+ } 
+.highlight{ 
+  color: white;
+  background-color: #2A383F; 
+} 
+.highlight:hover{ 
+  color: white; 
+} 
+.outer-link{
+ border-color: black;  
+}
+.demoLogo{
+    height: 45px;
+    width: 150px;
+    margin-right: 20px;
+}

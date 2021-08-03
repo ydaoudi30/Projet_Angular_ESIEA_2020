@@ -1,0 +1,39 @@
+<h2 mat-dialog-title style="text-align: center;margin-bottom: 50px;" class="appFont">Sign In to Demosite</h2>
+<form class="form"  name="form"  (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+<div style="padding-left: 15px;"> 
+  <button type="button" class="facebook-signing-button appFont"> 
+     <img style="height:20px;width:20px" src="../../assets/socialmedia/facebook.png">
+    <p style="margin-left: 40px;">Continue with Facebook</p>
+  </button> 
+  <button type="button" class="google-signing-button appFont"> 
+     <img style="height:20px;width:20px" src="../../assets/socialmedia/google-plus.png">
+    <p style="margin-left: 40px;">Continue with Google</p>
+  </button> 
+  <div id="form" style="width: 320px;">
+      <fieldset style="border-bottom: none;border-left: none;border-right: none;margin-top: 25px;padding: 0px">
+        <legend style="margin-left: 43%;">OR</legend>
+            <div class="alert" role="alert" *ngIf="errorMessage">{{errorMessage}}</div> 
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Email/Username</mat-label>
+                <input matInput  name="userName" id="userName" [(ngModel)]="user.userName" #userName="ngModel" required
+                       placeholder="Username">  
+              </mat-form-field> 
+            <div *ngIf="f.submitted && !userName.valid" class="help-block">The User Name is required</div>
+          
+            <mat-form-field class="form-field"  appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" name="password" id="password" [(ngModel)]="user.password" #password="ngModel" required>
+              </mat-form-field>
+          <div *ngIf="f.submitted && !password.valid" class="help-block">The password is required</div>
+          
+      </fieldset>
+  </div>   
+  <button type="button" class="continue-button appFont"  type="submit"> 
+    <p style="margin-left: 40px;">Continue</p>
+  </button>  
+</div> 
+</form>
+<div style="margin-top: 10px;text-align: right;margin-right: 15px;"> 
+  <span fxFlex></span> 
+  <a  (click)="forgetPassword()" [routerLink]="['/session/forgot-password']">Forgot Password?</a>
+</div>  

@@ -1,0 +1,18 @@
+ 
+  <mat-nav-list  style="padding-left: 10px " class="ml-0" dense>  
+    <span *ngFor="let child of items"> 
+        <mat-list-item *ngIf=" child.role == currentUser.userGroup.usrGrpCode && platform == 'desktop'" class="text-black subMenu" 
+                       [ngClass]="{'highlight': selectedLink == child.routeType}"> 
+          <!-- <img class="menuIcon" src="{{child.iconName}}">  -->
+          <a class="text-light btn-link" id="{{child.routeType}}"
+             (click)="linkClick(child)">  {{child.displayName}}</a>
+        </mat-list-item>  
+        <mat-list-item *ngIf="child.role == currentUser.userGroup.usrGrpCode && platform == 'mobile'"  class="text-light  subMenu" 
+                       [ngClass]="{'highlight': selectedLink == child.routeType}"> 
+            <!-- <img class="menuIcon" src="{{child.iconName}}">   -->
+          <a class="btn-link text-light" id="{{child.routeType}}"
+             (click)="sidenav.toggle(); linkClick(child)"> {{child.displayName}}</a>  
+        </mat-list-item> 
+    </span>
+
+</mat-nav-list>

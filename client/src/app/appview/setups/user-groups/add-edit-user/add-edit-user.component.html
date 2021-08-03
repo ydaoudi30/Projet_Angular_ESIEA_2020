@@ -1,0 +1,44 @@
+<h2 mat-dialog-title style="text-align: center;" class="appFont">Add User</h2>
+<form class="form"  name="form"  (ngSubmit)="f.form.valid && regContinue()" #f="ngForm" novalidate>
+<div>  
+  <div id="form">
+      <fieldset style="margin-bottom: 10px;"> 
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput  name="firstName" id="firstName" [(ngModel)]="currentUser.firstName" #firstName="ngModel" required
+                    placeholder="First Name">  
+            </mat-form-field> 
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput  name="lastName" id="lastName" [(ngModel)]="currentUser.lastName" #lastName="ngModel" required
+                    placeholder="Last Name">  
+            </mat-form-field> 
+
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Choose a Username</mat-label>
+                <input matInput  name="userName" id="userName" [(ngModel)]="currentUser.userName" #userName="ngModel" required
+                    placeholder="Username">  
+            </mat-form-field> 
+            <div *ngIf="f.submitted && !userName.valid" class="help-block">The User Name is required</div>
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput  name="email" id="email" [(ngModel)]="currentUser.email" #email="ngModel" required
+                       placeholder="Email">  
+            </mat-form-field> 
+            <div *ngIf="f.submitted && !email.valid" class="help-block">The User Name is required</div> 
+
+            <mat-form-field class="form-field"  appearance="outline">
+                <mat-label>Choose a Password</mat-label>
+                <input matInput type="password" name="password" id="password" [(ngModel)]="currentUser.password" #password="ngModel" required>
+            </mat-form-field>
+            <div *ngIf="f.submitted && !password.valid" class="help-block">The password is required</div>
+            <mat-radio-group aria-label="Select an option" id="selectedRole" name="selectedRole" [(ngModel)]="selectedRole">
+                    <mat-radio-button style="margin-right:10px" *ngFor="let role of userRoles"  [value]="role">{{role}}</mat-radio-button>  
+            </mat-radio-group>
+      </fieldset>
+  </div>    
+  <button type="button" class="continue-button appFont"  type="submit"> 
+    <p style="margin-left: 40px;">Continue</p>
+  </button>  
+</div>
+</form> 

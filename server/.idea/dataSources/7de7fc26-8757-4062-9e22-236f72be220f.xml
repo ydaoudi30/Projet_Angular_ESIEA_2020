@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="pjwebdb@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="pjwebdb">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="demosite"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <table id="8" parent="2" name="hibernate_sequence"/>
+    <table id="9" parent="2" name="horses"/>
+    <table id="10" parent="2" name="rides"/>
+    <table id="11" parent="2" name="scheduls"/>
+    <table id="12" parent="2" name="token"/>
+    <table id="13" parent="2" name="users"/>
+    <column id="14" parent="8" name="next_val">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+    </column>
+    <column id="15" parent="9" name="horse_id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="9" name="available">
+      <Position>2</Position>
+      <DataType>bit(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="9" name="created">
+      <Position>3</Position>
+      <DataType>datetime(6)|0</DataType>
+    </column>
+    <column id="18" parent="9" name="image">
+      <Position>4</Position>
+      <DataType>longblob|0</DataType>
+    </column>
+    <column id="19" parent="9" name="name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="20" parent="9" name="updated">
+      <Position>6</Position>
+      <DataType>datetime(6)|0</DataType>
+    </column>
+    <key id="21" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>horse_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="22" parent="10" name="ride_id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="10" name="horse">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+    </column>
+    <column id="24" parent="10" name="rider">
+      <Position>3</Position>
+      <DataType>bigint|0</DataType>
+    </column>
+    <column id="25" parent="10" name="scheduale">
+      <Position>4</Position>
+      <DataType>bigint|0</DataType>
+    </column>
+    <index id="26" parent="10" name="FK1h4bo54ttf7rlpd93jllen4lk">
+      <ColNames>horse</ColNames>
+    </index>
+    <index id="27" parent="10" name="FK90ysmcbhffhm2ydhoixcgbodv">
+      <ColNames>rider</ColNames>
+    </index>
+    <index id="28" parent="10" name="FKgiwdt75nll5u3ye14xvsqxq5t">
+      <ColNames>scheduale</ColNames>
+    </index>
+    <key id="29" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ride_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="30" parent="10" name="FK1h4bo54ttf7rlpd93jllen4lk">
+      <ColNames>horse</ColNames>
+      <RefSchemaName>pjwebdb</RefSchemaName>
+      <RefTableName>horses</RefTableName>
+      <RefColNames>horse_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="31" parent="10" name="FK90ysmcbhffhm2ydhoixcgbodv">
+      <ColNames>rider</ColNames>
+      <RefSchemaName>pjwebdb</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="32" parent="10" name="FKgiwdt75nll5u3ye14xvsqxq5t">
+      <ColNames>scheduale</ColNames>
+      <RefSchemaName>pjwebdb</RefSchemaName>
+      <RefTableName>scheduls</RefTableName>
+      <RefColNames>schedual_id</RefColNames>
+    </foreign-key>
+    <column id="33" parent="11" name="schedual_id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="11" name="datetime">
+      <Position>2</Position>
+      <DataType>datetime(6)|0</DataType>
+    </column>
+    <column id="35" parent="11" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="36" parent="11" name="instructor">
+      <Position>4</Position>
+      <DataType>bigint|0</DataType>
+    </column>
+    <index id="37" parent="11" name="FK791w27sbup4290vkx9uyrs6ld">
+      <ColNames>instructor</ColNames>
+    </index>
+    <key id="38" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>schedual_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="39" parent="11" name="FK791w27sbup4290vkx9uyrs6ld">
+      <ColNames>instructor</ColNames>
+      <RefSchemaName>pjwebdb</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <column id="40" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="12" name="expiry_date">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+    </column>
+    <column id="42" parent="12" name="status">
+      <Position>3</Position>
+      <DataType>bit(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="12" name="token">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="44" parent="12" name="user_user_id">
+      <Position>5</Position>
+      <DataType>bigint|0</DataType>
+    </column>
+    <index id="45" parent="12" name="FK22ancosgvhuh4upst1n4vn6am">
+      <ColNames>user_user_id</ColNames>
+    </index>
+    <key id="46" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="47" parent="12" name="FK22ancosgvhuh4upst1n4vn6am">
+      <ColNames>user_user_id</ColNames>
+      <RefSchemaName>pjwebdb</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <column id="48" parent="13" name="user_id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="13" name="created">
+      <Position>2</Position>
+      <DataType>datetime(6)|0</DataType>
+    </column>
+    <column id="50" parent="13" name="email">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="51" parent="13" name="first_name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="52" parent="13" name="last_name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="53" parent="13" name="password">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="54" parent="13" name="phone">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="55" parent="13" name="role">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="56" parent="13" name="updated">
+      <Position>9</Position>
+      <DataType>datetime(6)|0</DataType>
+    </column>
+    <column id="57" parent="13" name="user_name">
+      <Position>10</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="58" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

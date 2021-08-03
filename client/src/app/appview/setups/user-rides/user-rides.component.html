@@ -1,0 +1,29 @@
+<mat-toolbar>
+       Available Schedules
+</mat-toolbar> 
+<div style="float: left;display: block;width: 280px;margin-top: 10px;margin-right: 10px;"  *ngFor="let schedule of schedules"> 
+<mat-card fxLayout="row" fxFlex="280px" fxLayoutGap="10px" style="height: 90px;"> 
+        <div FxFlex="100%" style="width: 100%" fxLayout="column" fxLayoutAlign="space-evenly start">  
+                <span class="fx-userName"  style="font-weight: bold">{{schedule.name}}</span>  
+                <span class="fx-notifitext">{{schedule.datetime | date}}</span> 
+                <button style="width: 100%;background: darkgray;color: white;font-weight: bold;" mat-button
+                        (click)="getRide(schedule)">Get Ride</button>
+        </div>
+</mat-card>  
+</div> 
+<mat-toolbar>
+      My Rides
+</mat-toolbar> 
+<div style="float: left;display: block;width: 280px;margin-top: 10px;margin-right: 10px;"  *ngFor="let ride of rides"> 
+<mat-card fxLayout="row" fxFlex="280px" fxLayoutGap="10px" style="height: 90px;"> 
+        <div  style="width: 100%" FxFlex fxLayout="column" fxLayoutAlign="space-evenly start">  
+            <span>Rider:<span class="fx-userName"  style="font-weight: bold">{{ride.rider?.userName}}</span> </span>  
+            <span>Intructor:<span class="fx-notifitext" style="font-weight: bold">{{ride.scheduale?.instructor?.firstName}}</span> </span>
+            <span>Horse: 
+                    <span *ngIf="ride.horse" class="fx-notifitext" style="font-weight: bold">{{ride.horse?.name}}</span>
+                    <span *ngIf="!ride.horse">not added yet</span>
+            </span>
+        </div>
+</mat-card>  
+</div>  
+ <!-- *ngIf="ride.horse" -->

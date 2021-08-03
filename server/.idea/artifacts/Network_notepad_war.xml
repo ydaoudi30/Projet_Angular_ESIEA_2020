@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Network-notepad:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Network-notepad-0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Network-notepad:war exploded" />
+    </root>
+  </artifact>
+</component>
